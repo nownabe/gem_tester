@@ -3,7 +3,8 @@ require "timeout"
 require "parallel"
 
 class Tester
-  SCRIPT_URL = "https://raw.githubusercontent.com/nownabe/gem_tester/master/scripts/run-gem_tester.sh"
+  SCRIPT_URL =
+    "https://raw.githubusercontent.com/nownabe/gem_tester/master/scripts/run-gem_tester.sh"
 
   attr_reader :branch
   attr_reader :enable_shared
@@ -13,7 +14,6 @@ class Tester
     @image_family  = image_family
     @branch        = branch
     @enable_shared = enable_shared
-    @image_project = get_image_project
   end
 
   def run
@@ -61,7 +61,8 @@ class Tester
   end
 
   def image_project
-    @image_project ||= `gcloud compute images list | grep #{image} | awk '{ print $2 }'`.chomp
+    @image_project ||=
+      `gcloud compute images list | grep #{image_family} | awk '{ print $2 }'`.chomp
   end
 
   def instance_name
@@ -82,9 +83,9 @@ class Tester
     ])
 
     if ret.success?
-      puts "#{image} - Succeeded!"
+      puts "#{image_family} - Succeeded!"
     else
-      puts "#{image} - Failed!"
+      puts "#{image_family} - Failed!"
     end
   end
 
@@ -145,7 +146,7 @@ class ParallelTester
   end
 
   def run
-    puts "* #{branch} / enable_shared: #{enable_shared} (#{log})"
+    puts "* #{branch} / enable_shared: #{enable_shared}"
     Parallel.each(images, in_threads: images.size) do |image|
       Tester.new(image, branch: branch, enable_shared: enable_shared).run
     end

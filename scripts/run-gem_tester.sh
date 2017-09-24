@@ -26,7 +26,7 @@ function install_test_dependencies_centos() {
   sudo yum install -y \
     gcc-c++ libxml2-devel mysql-devel postgresql-devel sqlite-devel \
     fcgi-devel libcurl-devel lsof cmake libtool nodejs libidn-devel \
-    wget
+    wget zip
 }
 
 function install_build_dependencies_debian() {

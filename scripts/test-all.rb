@@ -14,7 +14,7 @@ class Tester
   IMAGES = %w(
     ubuntu-1604-lts
   )
-  SCRIPT_URL = "https://gist.githubusercontent.com/nownabe/6f90da65c3a38364a7d9981316cd7d40/raw/test_gems.sh"
+  SCRIPT_URL = "https://raw.githubusercontent.com/nownabe/gem_tester/master/scripts/run-gem_tester.sh"
 
   attr_reader :branch
   attr_reader :enable_shared

@@ -35,6 +35,8 @@ elif [[ -f /etc/redhat-release ]]; then
   distrib_release=$(cut -d' ' -f3 /etc/redhat-release)
 fi
 
+echo "Distribution: ${distrib_id} (${distrib_release})"
+
 case "$distrib_id" in
   "Ubuntu")
     install_build_dependencies_ubuntu $distrib_release

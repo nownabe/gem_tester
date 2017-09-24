@@ -37,7 +37,7 @@ function install_build_dependencies_debian() {
 
 function install_test_dependencies_debian() {
   sudo apt-get install -y \
-    ncurses-dev g++ libxml2-dev libmsqlclient-dev libpq-dev \
+    libncurses5-dev g++ libxml2-dev libmsqlclient-dev libpq-dev \
     libsqlite3-dev libidn11-dev nodejs libcurl4-gnutls-dev cmake \
     lsof libfcgi-dev libtool zip
 }

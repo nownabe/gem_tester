@@ -12,8 +12,10 @@ class Tester
     ubuntu-1704
   ).freeze
   IMAGES = %w(
+    centos-7
+    debian-8
     ubuntu-1604-lts
-  )
+  ).freeze
   SCRIPT_URL = "https://raw.githubusercontent.com/nownabe/gem_tester/master/scripts/run-gem_tester.sh"
 
   attr_reader :branch

@@ -4,7 +4,6 @@ require "parallel"
 
 class Tester
   IMAGES = %w(
-    centos-6
     centos-7
     debian-8
     debian-9

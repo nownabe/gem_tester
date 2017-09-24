@@ -66,6 +66,7 @@ case "$distrib_id" in
   "Debian")
     install_build_dependencies_debian $distrib_release
     install_test_dependencies_debian $distrib_release
+    ;;
   *)
     echo "Unknown distribution"
     ;;

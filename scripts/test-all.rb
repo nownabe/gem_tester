@@ -80,6 +80,7 @@ class Tester
       --zone asia-northeast1-a
       --command "#{test_command}"
       -- -t
+      -o ServerAliveInterval=60
     ])
 
     if ret.success?

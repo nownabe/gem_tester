@@ -27,6 +27,19 @@ function install_test_dependencies_centos() {
     wget
 }
 
+function install_build_dependencies_debian() {
+  sudo apt-get install -y \
+    git ruby autoconf bison gcc make zlib1g-dev libffi-dev \
+    libreadline-dev libgdbm-dev libssl-dev
+}
+
+function install_test_dependencies_debian() {
+  sudo apt-get install -y \
+    ncurses-dev g++ libxml2-dev libmsqlclient-dev libpq-dev \
+    libsqlite3-dev libidn11-dev nodejs libcurl4-gnutls-dev cmake \
+    lsof libfcgi-dev libtool zip
+}
+
 if [[ -f /etc/lsb-release ]]; then
   . /etc/lsb-release
   distrib_id=$DISTRIB_ID
@@ -34,6 +47,9 @@ if [[ -f /etc/lsb-release ]]; then
 elif [[ -f /etc/redhat-release ]]; then
   distrib_id=$(cut -d' ' -f1 /etc/redhat-release)
   distrib_release=$(cut -d' ' -f3 /etc/redhat-release)
+elif [[ -f /etc/debian_version ]]; then
+  distrib_id=Debian
+  distrib_release=$(cat /etc/debian_version)
 fi
 
 echo "Distribution: ${distrib_id} (${distrib_release})"
@@ -47,6 +63,9 @@ case "$distrib_id" in
     install_build_dependencies_centos $distrib_release
     install_test_dependencies_centos $distrib_release
     ;;
+  "Debian")
+    install_build_dependencies_debian $distrib_release
+    install_test_dependencies_debian $distrib_release
   *)
     echo "Unknown distribution"
     ;;

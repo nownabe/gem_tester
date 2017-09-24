@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 function install_build_dependencies_ubuntu() {
   sudo apt-get install -y \
     git ruby autoconf bison gcc make zlib1g-dev libffi-dev \

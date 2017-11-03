@@ -9,7 +9,7 @@ install:
   - sudo apt-get -y install docker-ce
   - docker --version
 before_script: docker login --username $DOCKERHUB_USER --password $DOCKERHUB_PASSWORD
-script: "./build.sh"
+script: "./build.sh $([[ $TRAVIS_BRANCH = \"master\" ]] && echo push)"
 env:
   global:
   - secure: cXA31VYTNtulFHbWeVciMYnkQuJ+dzqRHzBBT/9uN5Bt2R42Dc5fjo2ONBwV7vYSBBPj8NpIFoUEgYizZZ7DMcrs1x2Plfj9wbi5vQvWMn3+xUmiFXIhgQl8xX3BGeqovfK75qOPwdRCCfE4YOjCOgRkFYfiWqYwEN/pTfi6kz4MRara2ExOy9f7jR1xUUiFIzKzstpcqs2Rs/9XeIu5a39hrcIgAjr86k0/aUr99jHHwGm+qppOhxirgZR+mI/OrpHlKywiw6fM9u8jDCKI6P8B+Md3DSqtNF946L/2u0tfSSFvbdnMTWS6gBIWQWZnAenokzLExEybpD/Av3g+VcUcaXu42ZITombNhWqu6pqjYhKTYqrSFzzDdwEPrEVTudQh4yiRtsr0AC3OHxnZUIL/KNyJwPhEQ2dpYXPe+tG53ivUxMZ7lHte02vMzc7jX5bPb1qH1FsDD1LHzeTOyz9aei1ObrGqkNxDB4b+fE+um0sVka9BFQy6EX9IXvM/T5XYcyVJZmI1mDmWhE+e8PXWjorl1g1vsV86UZLwYyHsWHQXro/yL6hJxahNVTtHNDueAGxx1By8ZIGN2AcPxBDi53/6iuabyh0EyP681HY6yKra9aZcisArVjWSElOoPn/1gdHrHBmQuGDnfgHRsRKAhYwWQtfAby1kMsjZ+Zg=

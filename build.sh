@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -e
 
 for pf in $(ls platforms); do
   . platforms/${pf}
@@ -14,5 +14,5 @@ for pf in $(ls platforms); do
     --build-arg "test_deps=${test_deps}" \
     --build-arg "postprocess=${postprocess}" \
     .
-  docker push nownabe/gem_tester:${pf}
+  [[ $1 = "push" ]] && docker push nownabe/gem_tester:${pf}
 done

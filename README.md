@@ -3,6 +3,8 @@ Docker Images for GemTester
 
 [![Build Status](https://travis-ci.org/nownabe/gem_tester-docker.svg?branch=master)](https://travis-ci.org/nownabe/gem_tester-docker)
 
+[DockerHub](https://hub.docker.com/r/nownabe/gem_tester/)
+
 # Usage
 
 To run GemTester, run a `test.sh` in a GemTester docker image.

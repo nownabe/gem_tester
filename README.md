@@ -2,6 +2,7 @@ Docker Images for GemTester
 ===========================
 
 # Usage
+
 To run GemTester, run a `test.sh` in a GemTester docker image.
 For example:
 
@@ -9,15 +10,16 @@ For example:
 docker run nownabe/gem_tester:debian-stretch
 ```
 
-## Environment Variables
+## Environment variables
+
 * `RUBY_REPO`: Repository of Ruby.
 * `RUBY_BRANCH`: Branch or tag of Ruby.
 * `RUBY_CONFIGURE_OPTIONS`: Options for `./configure` of Ruby.
 * `GEMS`: Gems to be tested.
 
-
 # Development
 ## Build
+
 Run `./build.sh` to build docker images and push them to DockerHub.
 
 # Contributing

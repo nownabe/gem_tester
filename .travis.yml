@@ -1,5 +1,16 @@
-sudo: false
+sudo: required
 language: ruby
 rvm:
   - 2.4.2
-before_install: gem install bundler -v 1.15.4
+
+services:
+  - docker
+
+# Skip the installation steps
+install: true
+
+script: docker run nownabe/gem_tester:$TEST_PLATFORM
+
+env:
+  matrix:
+    - TEST_PLATFORM=debian-stretch

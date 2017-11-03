@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+set -eu
 
 for pf in $(ls platforms); do
   . platforms/${pf}

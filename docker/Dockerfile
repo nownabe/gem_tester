@@ -24,6 +24,6 @@ ENV RUBY_BRANCH "gem_tester-trunk"
 # TODO: ENV CONDITION_YAML embedded
 ENV RUBY_CONFIGURE_OPTIONS "--enable-shared"
 # TODO: ENV TEST_GEMS
-ENV GEMS "rspec-core"
+# ENV GEMS "rspec-core"
 
 CMD bash /gem_tester/test.sh

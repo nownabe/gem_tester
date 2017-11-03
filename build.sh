@@ -1,8 +1,5 @@
 #!/bin/bash
 
-basedir=$(dirname $(cd $(dirname $0) && pwd))
-
-cd $basedir/docker
 
 for pf in $(ls platforms); do
   . platforms/${pf}

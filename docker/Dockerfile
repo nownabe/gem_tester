@@ -2,7 +2,6 @@ ARG tag
 FROM ${tag}
 LABEL maintainer="nownabe@gmail.com"
 
-ARG tag
 ARG preprocess
 ARG install_command
 ARG build_deps
@@ -10,37 +9,13 @@ ARG test_deps
 ARG postprocess
 
 # Preprocess
-RUN set -x \
-  && echo ${tag} \
-  && echo ${preprocess} \
-  && echo ${install_command} \
-  && echo ${build_deps} \
-  && echo ${test_deps} \
-  && echo ${postprocess} \
-  && ${preprocess} \
+RUN ${preprocess} \
   && ${install_command} ${build_deps} \
-  && ${install_command} ${test_deps}
-RUN set -x \
+  && ${install_command} ${test_deps} \
   && ${postprocess} \
   && mkdir -p /gem_tester/build
 
-# Build dependencies
-# RUN apt-get install -y \
-#   git ruby autoconf bison gcc make zlib1g-dev libffi-dev \
-#   libreadline-dev libgdbm-dev libssl-dev
-
-# Test dependencies
-# RUN apt-get install -y \
-#   libncurses5-dev g++ libxml2-dev default-libmysqlclient-dev libpq-dev \
-#   libsqlite3-dev libidn11-dev nodejs libcurl4-gnutls-dev cmake \
-#   lsof libfcgi-dev libtool zip
-
-# Postprocess
-# RUN ${postprocess}
-
-# RUN mkdir /gem_tester
 WORKDIR /gem_tester
-# RUN mkdir /gem_tester/build
 
 COPY test.sh /gem_tester/test.sh
 

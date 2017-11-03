@@ -1,0 +1,6 @@
+tag='debian:stretch'
+preprocess='apt-get update'
+install_command='apt-get install -y --no-install-recommends'
+build_deps='git ruby autoconf bison gcc make zlib1g-dev libffi-dev libreadline-dev libgdbm-dev libssl-dev'
+test_deps='libncurses5-dev g++ libxml2-dev default-libmysqlclient-dev libpq-dev libsqlite3-dev libidn11-dev nodejs libcurl4-gnutls-dev cmake lsof libfcgi-dev libtool zip'
+postprocess='apt-get clean'

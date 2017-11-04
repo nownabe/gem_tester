@@ -5,6 +5,10 @@ Docker Images for GemTester
 
 [DockerHub](https://hub.docker.com/r/nownabe/gem_tester/)
 
+# Tags
+* centos-7
+* debian-stretch
+
 # Usage
 
 To run GemTester, run a `test.sh` in a GemTester docker image.

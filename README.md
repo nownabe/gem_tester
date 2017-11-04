@@ -16,10 +16,15 @@ docker run nownabe/gem_tester:debian-stretch
 
 ## Environment variables
 
-* `RUBY_REPO`: Repository of Ruby.
-* `RUBY_BRANCH`: Branch or tag of Ruby.
-* `RUBY_CONFIGURE_OPTIONS`: Options for `./configure` of Ruby.
-* `GEMS`: Gems to be tested.
+| Name | Default | Description |
+|---|---|---|
+| `RUBY_REPO` | `https://github.com/nownabe/ruby` | Repository of Ruby. |
+| `RUBY_BRANCH` | `gem_tester-trunk` | Branch or tag of Ruby. |
+| `RUBY_CONFIGURE_OPTIONS` | `--enable-shared` | Options for `./configure` of Ruby. |
+| `TEST_GEMS` | | Gems to be tested. |
+| `GEMTESTER_OPTIONS` | `--shallow` | Options for GemTester. |
+
+Default value is very temporary.
 
 # Development
 ## Build

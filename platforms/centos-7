@@ -1,6 +1,6 @@
 tag='centos:7'
 preprocess='yum install -y epel-release'
 install_command='yum install -y'
-build_deps='git ruby autoconf gcc bison bzip2 openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel'
+build_deps='git ruby autoconf make gcc bison bzip2 openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel'
 test_deps='gcc-c++ libxml2-devel mysql-devel postgresql-devel sqlite-devel fcgi-devel libcurl-devel lsof cmake libtool nodejs libidn-devel wget zip'
 postprocess='yum clean all'

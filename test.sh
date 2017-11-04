@@ -11,4 +11,4 @@ autoconf
 cd ../build
 ../ruby/configure --prefix=/gem_tester/install $CONFIGURE_OPTIONS
 make -j
-make test-gems
+make test-gems OPTIONS="${GEMTESTER_OPTIONS}"
